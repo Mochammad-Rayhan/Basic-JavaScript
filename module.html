@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ModuleJS</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="text"></p>
+    <p id="ray"></p>
+  </body>
+  <script type="module">
+    import { sayHi, message } from "./syntax.js";
+    sayHi("udin");
+    document.getElementById("demo").innerHTML = message;
+    console.log(message);
+
+    let x = 10;
+    switch (x) {
+      case 10:
+        document.getElementById("ray").innerHTML = alert("Hello");
+    }
+
+    let text =
+      '{"employees":[' +
+      '{"firstName":"John","lastName":"Doe" },' +
+      '{"firstName":"Anna","lastName":"Smith" },' +
+      '{"firstName":"Peter","lastName":"Jones" }]}';
+
+    const obj = JSON.parse(text);
+    console.log(obj.employees[0].firstName + " " + obj.employees[1].lastName);
+    document.getElementById("text").innerHTML =
+      obj.employees[2].firstName + " " + obj.employees[2].lastName;
+  </script>
+</html>
